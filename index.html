@@ -8,9 +8,22 @@
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
 <body class="is-preload">
-    <div class="rain-container">
-        <div class="rain"></div>
-    </div>
+  <style>
+        /* Add spin animation */
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .fa-diamond.spin {
+            display: inline-block;
+            animation: spin 4s linear infinite;
+        }
+    </style>
 
     <!-- Wrapper -->
     <div id="wrapper">
