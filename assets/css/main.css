@@ -1677,12 +1677,30 @@ body, html {
 }
 
 .typing-text {
-  font-size: 24px;
-  white-space: nowrap;
-  border-right: 2px solid;
-  width: 0;
+  display: inline-block;
+  border-right: 2px solid white;
   overflow: hidden;
-  animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
+  white-space: nowrap;
+  animation: typing 6s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+.line {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typingLine 1s steps(30, end) forwards;
+}
+
+.line:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.line:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.line:nth-child(3) {
+  animation-delay: 2s;
 }
 
 @keyframes typing {
@@ -1693,4 +1711,9 @@ body, html {
 @keyframes blink-caret {
   from, to { border-color: transparent; }
   50% { border-color: white; }
+}
+
+@keyframes typingLine {
+  from { width: 0; }
+  to { width: 100%; }
 }
