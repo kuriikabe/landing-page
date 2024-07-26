@@ -1660,20 +1660,38 @@ input, select, textarea {
 			opacity: 0;
 			
 		}
+/* Existing CSS code... */
+
+/* Typing Effect CSS */
 .typing-container {
   display: inline-block;
 }
 
 .typing-text {
   display: inline-block;
-}
-
-.typing-line {
-  display: inline-block;
   border-right: 2px solid white;
   overflow: hidden;
   white-space: nowrap;
-  animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
+  animation: typing 6s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+.line {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typingLine 1s steps(30, end) forwards;
+}
+
+.line:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.line:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.line:nth-child(3) {
+  animation-delay: 2s;
 }
 
 @keyframes typing {
@@ -1684,4 +1702,9 @@ input, select, textarea {
 @keyframes blink-caret {
   from, to { border-color: transparent; }
   50% { border-color: white; }
+}
+
+@keyframes typingLine {
+  from { width: 0; }
+  to { width: 100%; }
 }
